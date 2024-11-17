@@ -9,7 +9,7 @@
           Gestor de Tareas
         </span>
 
-        <!-- Botones de navegación -->
+       <!-- Botones de navegación -->
         <ul class="nav">
           <li class="nav-item me-2">
             <router-link class="nav-link d-flex align-items-center justify-content-center" to="/addtask" style="background-color: #35495E; color: white; padding: 10px 20px; border-radius: 5px;">
@@ -30,77 +30,30 @@
       </div>
     </nav>
 
-    <!-- Mensaje de bienvenida -->
-    <div class="text-center mt-4 p-4" style="background-color: #F8F9FA; border-radius: 8px;">
-      <h1 class="welcome-title">
-        Bienvenido a la <span class="highlighted">Aplicación de Tareas con Vue</span>
-      </h1>
-      <p class="mt-3 description">
-        Esta aplicación te permite gestionar tus tareas de manera eficiente.
-      </p>
-      <p class="description">
-        Puedes añadir nuevas tareas manualmente o extraerlas desde una API.
-      </p>
-      <img 
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" 
-        alt="Vue Logo" 
-        width="120" 
-        class="my-4 interactive-image" 
-        title="¡Explora las funcionalidades de Vue.js!" />
-
-      <h3 class="section-title">Secciones de la Aplicación</h3>
-      <ul class="list-unstyled features-list">
-        <li><strong>Añadir Tarea:</strong> Permite ingresar nuevas tareas manualmente.</li>
-        <li><strong>Lista de Tareas:</strong> Muestra todas las tareas extraídas desde la API.</li>
-        <li><strong>Vista Combinada:</strong> Combina funcionalidades de añadir y ver tareas.</li>
-      </ul>
-    </div>
-
-    <!-- Vista dinámica según la ruta -->
-    <router-view />
+    <!-- Aquí se cargará el componente correspondiente a la ruta seleccionada -->
+    <router-view/>
   </div>
 </template>
 
 <style>
-/* Estilo del mensaje de bienvenida */
-.welcome-title {
-  font-size: 2.5rem;
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
   font-weight: bold;
-  color: #0B5ED7; /* Azul principal */
+  color: #2c3e50;
 }
 
-.welcome-title .highlighted {
-  color: #35495E; /* Azul más oscuro */
-}
-
-.description {
-  font-size: 1.2rem;
-  color: #5F5F5F;
-}
-
-.interactive-image {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.interactive-image:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.section-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #0B5ED7;
-}
-
-.features-list li {
-  font-size: 1.2rem;
-  color: #3A3A3A;
-  margin: 10px 0;
-}
-
-.features-list li strong {
-  color: #35495E;
+nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
