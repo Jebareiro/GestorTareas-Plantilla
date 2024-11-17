@@ -1,22 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../views/Home.vue';  // Ruta a tu vista principal
+import Home from '../views/HomeView.vue';
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home,  // Componente que se renderiza en la ruta /
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: () => import('../views/About.vue'),  // Carga dinámica para la ruta /about
-  },
+    name: 'home',
+    component: Home
+  }
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes,
+  routes
 });
 
 export default router;
