@@ -1,22 +1,44 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../views/Home.vue';  // Ruta a tu vista principal
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import HomeView from '../views/HomeView.vue';
+import AddTask from '@/views/AddTask.vue';
+import CombinedView from '@/views/CombinedView.vue';
+import TaskList from '@/views/TaskList.vue';
+
+Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home,  // Componente que se renderiza en la ruta /
+    name: 'home',
+    component: HomeView
   },
   {
     path: '/about',
-    name: 'About',
-    component: () => import('../views/About.vue'),  // Carga dinámica para la ruta /about
+    name: 'about',
+    component: () => import('../views/AboutView.vue'),
+  },
+  {
+    path: '/addtask',
+    name: 'AddTask',
+    component: AddTask
+  },
+  {
+    path: '/combined',
+    name: 'CombinedView',
+    component: CombinedView
+  },
+  {
+    path: '/tasklist',
+    name: 'TaskList',
+    component: TaskList
   },
 ];
 
-const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes,
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes
 });
 
 export default router;
